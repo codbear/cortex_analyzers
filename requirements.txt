@@ -1,0 +1,11 @@
+# Dépendances pour les analyseurs VirusTotal Cortex
+# 
+# Ces analyseurs utilisent seulement la bibliothèque standard Python
+# et cortexutils qui est déjà installé avec Cortex
+#
+# Installation: pip install -r requirements.txt
+
+cortexutils>=2.0.0
+
+# Optionnel: pour des tests plus avancés
+# requests>=2.25.0

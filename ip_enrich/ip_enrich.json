@@ -1,0 +1,50 @@
+{
+    "name": "IP_VirusTotal",
+    "version": "2.0",
+    "author": "Echelon",
+    "url": "",
+    "license": "AGPL-V3",
+    "baseConfig": "IP_VirusTotal",
+    "config": {
+        "check_tlp": false,
+        "max_tlp": 3,
+        "service": ""
+    },
+    "description": "Enrich public IP with VirusTotal API v3 for threat intelligence and malware analysis",
+    "dataTypeList": ["ip"],
+    "command": "ip_enrich/ip_enrich.py",
+    "configurationItems": [
+        {
+            "name": "api_key",
+            "description": "VirusTotal API key (required)",
+            "type": "string",
+            "multi": false,
+            "required": true,
+            "defaultValue": ""
+        },
+        {
+            "name": "api_timeout",
+            "description": "API request timeout in seconds",
+            "type": "number",
+            "multi": false,
+            "required": false,
+            "defaultValue": 10
+        },
+        {
+            "name": "enable_ssl_verify",
+            "description": "Enable SSL certificate verification",
+            "type": "boolean",
+            "multi": false,
+            "required": false,
+            "defaultValue": true
+        },
+        {
+            "name": "skip_private_ips",
+            "description": "Skip enrichment for private/internal IP addresses",
+            "type": "boolean",
+            "multi": false,
+            "required": false,
+            "defaultValue": true
+        }
+    ]
+}

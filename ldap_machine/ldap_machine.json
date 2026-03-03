@@ -1,0 +1,57 @@
+{
+    "name": "LDAP_Machine_Enrichment",
+    "version": "1.1",
+    "author": "Echelon",
+    "url": "",
+    "license": "AGPL-V3",
+    "baseConfig": "LDAP_Machine",
+    "config": {
+        "check_tlp": false,
+        "max_tlp": 3,
+        "service": ""
+    },
+    "description": "Retrieve machine information from OpenLDAP using hostname",
+    "dataTypeList": ["hostname"],
+    "command": "ldap_machine/ldap_machine.py",
+    "configurationItems": [
+        {
+            "name": "ldap_uri",
+            "description": "LDAP server URI (e.g., ldap://10.0.2.15:389)",
+            "type": "string",
+            "multi": false,
+            "required": true,
+            "defaultValue": "ldap://10.0.2.15:389"
+        },
+        {
+            "name": "bind_dn",
+            "description": "LDAP bind DN for authentication",
+            "type": "string",
+            "multi": false,
+            "required": true,
+            "defaultValue": "cn=admin,dc=echelon,dc=local"
+        },
+        {
+            "name": "bind_password",
+            "description": "LDAP bind password",
+            "type": "string",
+            "multi": false,
+            "required": true
+        },
+        {
+            "name": "base_dn",
+            "description": "Base DN for computer search",
+            "type": "string",
+            "multi": false,
+            "required": true,
+            "defaultValue": "ou=computers,dc=echelon,dc=local"
+        },
+        {
+            "name": "timeout",
+            "description": "LDAP search timeout in seconds",
+            "type": "number",
+            "multi": false,
+            "required": false,
+            "defaultValue": 30
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "name": "Hash_VirusTotal",
+    "version": "2.0",
+    "author": "Echelon",
+    "url": "",
+    "license": "AGPL-V3",
+    "baseConfig": "Hash_VirusTotal",
+    "config": {
+        "check_tlp": false,
+        "max_tlp": 3,
+        "service": ""
+    },
+    "description": "Enrich file hash using VirusTotal API v3 for malware analysis and threat intelligence",
+    "dataTypeList": ["hash"],
+    "command": "hash_enrich/hash_enrich.py",
+    "configurationItems": [
+        {
+            "name": "api_key",
+            "description": "VirusTotal API key (required)",
+            "type": "string",
+            "multi": false,
+            "required": true,
+            "defaultValue": ""
+        },
+        {
+            "name": "api_timeout",
+            "description": "API request timeout in seconds",
+            "type": "number",
+            "multi": false,
+            "required": false,
+            "defaultValue": 15
+        },
+        {
+            "name": "enable_ssl_verify",
+            "description": "Enable SSL certificate verification",
+            "type": "boolean",
+            "multi": false,
+            "required": false,
+            "defaultValue": true
+        }
+    ]
+}
